@@ -10,14 +10,13 @@
     <ul id="colorList"></ul>
 
     <script>
-      // Fetch the colors from your Express route
       fetch("/api/colors")
         .then((response) => response.json())
         .then((colors) => {
           const list = document.getElementById("colorList");
           colors.forEach((color) => {
             const item = document.createElement("li");
-            item.textContent = color.name || color; // handles both string and object format
+            item.textContent = color.name || color;
             list.appendChild(item);
           });
         })
